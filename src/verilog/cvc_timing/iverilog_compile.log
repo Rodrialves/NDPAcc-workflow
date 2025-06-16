@@ -1,0 +1,113 @@
+4num-sum_tb.v:4: Include file constants.vh not found
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:33: error: 'sky130_fd_sc_hd__clkbuf' has already been declared in this scope.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:33:      : It was declared here as a module.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:55: Module sky130_fd_sc_hd__clkbuf was already declared here: /home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:33
+
+accelerator.nl.v:867: error: Failed to parse library file.
+accelerator.nl.v:867: error: Unknown module type: sky130_fd_sc_hd__clkbuf_1
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf.behavioral.v:33: error: 'sky130_fd_sc_hd__buf' has already been declared in this scope.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf.behavioral.v:33:      : It was declared here as a module.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf.behavioral.v:55: Module sky130_fd_sc_hd__buf was already declared here: /home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf.behavioral.v:33
+
+accelerator.nl.v:933: error: Failed to parse library file.
+accelerator.nl.v:933: error: Unknown module type: sky130_fd_sc_hd__buf_2
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:33: error: 'sky130_fd_sc_hd__clkbuf' has already been declared in this scope.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:33:      : It was declared here as a module.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:55: Module sky130_fd_sc_hd__clkbuf was already declared here: /home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:33
+
+accelerator.nl.v:957: error: Failed to parse library file.
+accelerator.nl.v:957: error: Unknown module type: sky130_fd_sc_hd__clkbuf_2
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf.behavioral.v:33: error: 'sky130_fd_sc_hd__buf' has already been declared in this scope.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf.behavioral.v:33:      : It was declared here as a module.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf.behavioral.v:55: Module sky130_fd_sc_hd__buf was already declared here: /home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf.behavioral.v:33
+
+accelerator.nl.v:959: error: Failed to parse library file.
+accelerator.nl.v:959: error: Unknown module type: sky130_fd_sc_hd__buf_4
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:33: error: 'sky130_fd_sc_hd__clkbuf' has already been declared in this scope.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:33:      : It was declared here as a module.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:55: Module sky130_fd_sc_hd__clkbuf was already declared here: /home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/clkbuf/sky130_fd_sc_hd__clkbuf.behavioral.v:33
+
+accelerator.nl.v:966: error: Failed to parse library file.
+accelerator.nl.v:966: error: Unknown module type: sky130_fd_sc_hd__clkbuf_8
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:33: error: 'sky130_fd_sc_hd__decap' has already been declared in this scope.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:33:      : It was declared here as a module.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:41: Module sky130_fd_sc_hd__decap was already declared here: /home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:33
+
+accelerator.nl.v:981: error: Failed to parse library file.
+accelerator.nl.v:981: error: Unknown module type: sky130_fd_sc_hd__decap_4
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/fill/sky130_fd_sc_hd__fill.behavioral.v:33: error: 'sky130_fd_sc_hd__fill' has already been declared in this scope.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/fill/sky130_fd_sc_hd__fill.behavioral.v:33:      : It was declared here as a module.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/fill/sky130_fd_sc_hd__fill.behavioral.v:41: Module sky130_fd_sc_hd__fill was already declared here: /home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/fill/sky130_fd_sc_hd__fill.behavioral.v:33
+
+accelerator.nl.v:985: error: Failed to parse library file.
+accelerator.nl.v:985: error: Unknown module type: sky130_fd_sc_hd__fill_2
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:33: error: 'sky130_fd_sc_hd__decap' has already been declared in this scope.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:33:      : It was declared here as a module.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:41: Module sky130_fd_sc_hd__decap was already declared here: /home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:33
+
+accelerator.nl.v:997: error: Failed to parse library file.
+accelerator.nl.v:997: error: Unknown module type: sky130_fd_sc_hd__decap_8
+accelerator.nl.v:1000: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1002: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1006: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1007: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1010: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1018: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1022: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1023: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1024: error: Unknown module type: sky130_ef_sc_hd__decap_12
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:33: error: 'sky130_fd_sc_hd__decap' has already been declared in this scope.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:33:      : It was declared here as a module.
+/home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:41: Module sky130_fd_sc_hd__decap was already declared here: /home/rodrialves/MSc/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/cells/decap/sky130_fd_sc_hd__decap.behavioral.v:33
+
+accelerator.nl.v:1029: error: Failed to parse library file.
+accelerator.nl.v:1029: error: Unknown module type: sky130_fd_sc_hd__decap_6
+accelerator.nl.v:1033: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1038: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1045: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1058: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1059: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1068: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1071: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1088: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1092: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1098: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1100: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1104: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1109: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1112: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1113: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1114: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1115: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1121: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1122: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1124: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1139: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1141: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1144: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1152: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1159: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1162: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1163: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1171: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1172: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1181: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1184: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1188: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1189: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1191: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1192: error: Unknown module type: sky130_ef_sc_hd__decap_12
+accelerator.nl.v:1204: error: Unknown module type: sky130_ef_sc_hd__decap_12
+82 error(s) during elaboration.
+*** These modules were missing:
+        sky130_ef_sc_hd__decap_12 referenced 45 times.
+        sky130_fd_sc_hd__buf_2 referenced 1 times.
+        sky130_fd_sc_hd__buf_4 referenced 1 times.
+        sky130_fd_sc_hd__clkbuf_1 referenced 1 times.
+        sky130_fd_sc_hd__clkbuf_2 referenced 1 times.
+        sky130_fd_sc_hd__clkbuf_8 referenced 1 times.
+        sky130_fd_sc_hd__decap_4 referenced 1 times.
+        sky130_fd_sc_hd__decap_6 referenced 1 times.
+        sky130_fd_sc_hd__decap_8 referenced 1 times.
+        sky130_fd_sc_hd__fill_2 referenced 1 times.
+***

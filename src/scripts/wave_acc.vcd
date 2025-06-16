@@ -1,0 +1,185 @@
+$date
+	Mon Jun 16 15:48:23 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module accelerator_tb $end
+$var wire 1 ! done $end
+$var wire 32 " data_out [31:0] $end
+$var parameter 32 # CLK_PERIOD $end
+$var parameter 32 $ NUM_WIDTH $end
+$var reg 1 % arst_i $end
+$var reg 1 & clk_i $end
+$var reg 32 ' data_in [31:0] $end
+$var reg 1 ( start $end
+$scope module dut $end
+$var wire 1 % arst_i $end
+$var wire 1 & clk_i $end
+$var wire 32 ) data_in [31:0] $end
+$var wire 1 ( start $end
+$var wire 10 * sum [9:0] $end
+$var wire 8 + byte3 [7:0] $end
+$var wire 8 , byte2 [7:0] $end
+$var wire 8 - byte1 [7:0] $end
+$var wire 8 . byte0 [7:0] $end
+$var parameter 32 / DONE $end
+$var parameter 32 0 IDLE $end
+$var parameter 32 1 NUM_WIDTH $end
+$var reg 32 2 data_out [31:0] $end
+$var reg 1 ! done $end
+$var reg 1 3 state $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000 1
+b0 0
+b1 /
+b1000 $
+b1010 #
+$end
+#0
+$dumpvars
+03
+b0 2
+b0 .
+b0 -
+b0 ,
+b0 +
+b0 *
+b0 )
+0(
+b0 '
+0&
+1%
+b0 "
+0!
+$end
+#5000
+1&
+#10000
+0&
+#15000
+1&
+#20000
+0&
+0%
+#25000
+1&
+#30000
+b1 .
+b10 -
+b11 ,
+b1010 *
+b100 +
+0&
+1(
+b100000000110000001000000001 '
+b100000000110000001000000001 )
+#35000
+b1010 "
+b1010 2
+13
+1&
+#40000
+0&
+0(
+#45000
+03
+1!
+1&
+#50000
+0&
+#55000
+0!
+1&
+#60000
+0&
+#65000
+b1111111100 "
+b1111111100 2
+13
+b11111111 .
+b11111111 -
+b11111111 ,
+b1111111100 *
+b11111111 +
+1&
+1(
+b11111111111111111111111111111111 '
+b11111111111111111111111111111111 )
+#70000
+0&
+#75000
+03
+1!
+1&
+0(
+#80000
+0&
+#85000
+0!
+1&
+#90000
+0&
+#95000
+b0 "
+b0 2
+13
+b0 .
+b0 -
+b0 ,
+b0 *
+b0 +
+1&
+1(
+b0 '
+b0 )
+#100000
+0&
+#105000
+03
+1!
+1&
+0(
+#110000
+0&
+#115000
+0!
+1&
+#120000
+0&
+#125000
+b11111010 "
+b11111010 2
+13
+b1100100 .
+b110010 -
+b11001 ,
+b11111010 *
+b1001011 +
+1&
+1(
+b1001011000110010011001001100100 '
+b1001011000110010011001001100100 )
+#130000
+0&
+#135000
+03
+1!
+1&
+0(
+#140000
+0&
+#145000
+0!
+1&
+#150000
+0&
+#155000
+1&

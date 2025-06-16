@@ -1,0 +1,10 @@
+design_name: lsu_wrapper
+runs_dir: /home/rodrialves/MSc/design_runs/lsu_acc/runs
+lib_files: #Alter just to include the folder where the libraries are, and then use each one that is there
+  - /home/rodrialves/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_100C_1v65.lib
+  - /home/rodrialves/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_100C_1v95.lib
+netlist_rel_path: final/nl/lsu_wrapper.nl.v
+sdc_rel_path: final/sdc/lsu_wrapper.sdc
+area_report_rel_path: reports/signoff/area.rpt
+vcd_path: /home/rodrialves/MSc/vcs/lsu_wrapper_tb.vcd  # optional
+# run_tag: RUN_20250613_1024  # optional
