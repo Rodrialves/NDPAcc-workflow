@@ -5,4 +5,6 @@ src/iob-cache/
 src/py2hwsw/
 src/iob_cache_V0.3/
 src/iob_cache_V0.2/ 
-src/8int-sum_iob-cache/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/
+src/pdk_cells/
+src/verilog/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/
+vcs/
