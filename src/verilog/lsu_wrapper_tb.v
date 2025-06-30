@@ -4,7 +4,7 @@
 module lsu_wrapper_tb;
 
     // Testbench parameters
-    parameter CLK_PERIOD = 1000; // 10ns clock period (100MHz)
+    parameter CLK_PERIOD = 100; // 10ns clock period (100MHz)
     parameter DATA_WIDTH = `FE_DATA_W;
     parameter ADDR_WIDTH = `FE_ADDR_W;
     parameter FIFO_DEPTH = `FIFO_DEPTH;
@@ -41,7 +41,7 @@ module lsu_wrapper_tb;
     // Instantiate the system_wrapper
     lsu_wrapper dut (
         .clk(clk),
-        .reset(reset),
+        .arst_i(reset),
         .start(start),
         .done(done),
         .load_base_addr(load_base_addr),

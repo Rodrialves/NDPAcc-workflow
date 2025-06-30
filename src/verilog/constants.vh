@@ -1,4 +1,4 @@
-`define ADDR_BUS_W 24
+// `define ADDR_BUS_W 24
 `define FE_ADDR_W 22
 `define FE_DATA_W 32
 `define BE_DATA_W 64

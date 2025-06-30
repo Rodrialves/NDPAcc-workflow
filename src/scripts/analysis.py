@@ -6,7 +6,7 @@ import json
 import shutil
 
 # Load configuration from YAML file
-with open('config.yaml', 'r') as f:
+with open('config_analysis.yaml', 'r') as f:
     config = yaml.safe_load(f)
 
 design_name = config['design_name']
@@ -14,6 +14,7 @@ runs_dir = config['runs_dir']
 lib_files = config['lib_files']
 netlist_rel_path = config['netlist_rel_path']
 sdc_rel_path = config['sdc_rel_path']
+spef_path = config['spef_rel_path']
 area_report_rel_path = config['area_report_rel_path']
 vcd_path = config.get('vcd_path')
 run_tag = config.get('run_tag')
@@ -33,6 +34,7 @@ else:
 run_dir = os.path.join(runs_dir, selected_run)
 netlist_path = os.path.join(run_dir, netlist_rel_path)
 sdc_path = os.path.join(run_dir, sdc_rel_path)
+spef_path = os.path.join(run_dir, spef_path)
 
 # Create reports directory
 reports_dir = os.path.join(run_dir, "reports")
@@ -88,12 +90,14 @@ for lib_file in lib_files:
     read_verilog {netlist_path}
     puts "Linking design: {design_name}"
     link_design $design_name
+    puts "Reading SPEF file: {spef_path}"
+    read_spef {spef_path}
     puts "Reading SDC file: {sdc_path}"
     read_sdc {sdc_path}
     """
     if vcd_path:
         vcd_basename = os.path.splitext(os.path.basename(vcd_path))[0]
-        tcl_script += f"puts \"Reading VCD file: {vcd_path}\"\nread_vcd -scope {vcd_basename}/dut {vcd_path}\n"
+        tcl_script += f"puts \"Reading VCD file: {vcd_path}\"\nread_vcd -scope {design_name}_tb/dut {vcd_path}\n"
     else:
         print("Warning: No VCD file provided. Power analysis may be inaccurate without activity factors.")
     tcl_script += """

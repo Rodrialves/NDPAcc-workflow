@@ -1,5 +1,4 @@
 cvc-src/
-design_runs/
 openlane2/
 src/iob-cache/
 src/py2hwsw/
@@ -8,3 +7,10 @@ src/iob_cache_V0.2/
 src/pdk_cells/
 src/verilog/cvc_timing/skywater-pdk-libs-sky130_fd_sc_hd/
 vcs/
+design_runs/acc
+design_runs/acc_max_min
+design_runs/acc_property
+design_runs/ctrl_lsu_wrapper
+design_runs/fifo
+design_runs/lsu_acc
+

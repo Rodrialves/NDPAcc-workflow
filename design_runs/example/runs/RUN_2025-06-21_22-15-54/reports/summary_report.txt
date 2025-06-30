@@ -1,0 +1,27 @@
+Analysis Results for Run: RUN_2025-06-21_22-15-54
+Design Name: lsu_wrapper
+--------------------------------------------------------------------------------
+Design Die Area: 94696.7 um^2
+Design Core Area: 84745 um^2
+--------------------------------------------------------------------------------
+Library                                  Max Frequency (MHz)  Power (mW)     
+--------------------------------------------------------------------------------
+sky130_fd_sc_hd__ff_100C_1v65.lib        179.797              24.600         
+sky130_fd_sc_hd__ff_100C_1v95.lib        211.066              41.900         
+sky130_fd_sc_hd__ff_n40C_1v56.lib        142.315              16.300         
+sky130_fd_sc_hd__ff_n40C_1v65.lib        159.649              20.600         
+sky130_fd_sc_hd__ff_n40C_1v76.lib        178.087              26.400         
+sky130_fd_sc_hd__ff_n40C_1v95.lib        203.844              37.600         
+sky130_fd_sc_hd__ff_n40C_1v95_ccsnoise.lib 203.844              37.600         
+sky130_fd_sc_hd__ss_100C_1v40.lib        63.969               5.820          
+sky130_fd_sc_hd__ss_100C_1v60.lib        90.146               11.300         
+sky130_fd_sc_hd__ss_n40C_1v28.lib        21.032               1.390          
+sky130_fd_sc_hd__ss_n40C_1v35.lib        31.193               2.370          
+sky130_fd_sc_hd__ss_n40C_1v40.lib        38.998               3.260          
+sky130_fd_sc_hd__ss_n40C_1v44.lib        45.464               4.130          
+sky130_fd_sc_hd__ss_n40C_1v60.lib        71.624               8.610          
+sky130_fd_sc_hd__ss_n40C_1v60_ccsnoise.lib 71.624               8.610          
+sky130_fd_sc_hd__ss_n40C_1v76.lib        96.590               14.300         
+sky130_fd_sc_hd__tt_025C_1v80.lib        149.797              23.800         
+sky130_fd_sc_hd__tt_100C_1v80.lib        155.115              25.500         
+--------------------------------------------------------------------------------

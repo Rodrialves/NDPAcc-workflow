@@ -1,0 +1,12 @@
+{
+  "DESIGN_NAME": "lsu_wrapper",
+  "VERILOG_FILES": [
+    "dir::4num-sum.v",
+    "dir::fifo.v",
+    "dir::lsu_wrapper.v",
+    "dir::load_store_unit.v"
+  ],
+  "CLOCK_PERIOD": 10,
+  "CLOCK_PORT": "clk",
+  "PDK": "sky130A"
+}

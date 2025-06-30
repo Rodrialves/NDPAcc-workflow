@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/home/rodrialves/MSc/design_runs/lsu_acc/runs/RUN_2025-06-21_22-15-54/tmp/c8b30396989c4c488434f1f3d2010b97.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/rodrialves/MSc/design_runs/lsu_acc/runs/RUN_2025-06-21_22-15-54/tmp/c8b30396989c4c488434f1f3d2010b97.bb.v"

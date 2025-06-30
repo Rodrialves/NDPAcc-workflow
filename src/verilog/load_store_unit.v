@@ -2,7 +2,7 @@
 
 module load_store_unit (
     input clk,
-    input reset,
+    input arst_i,
     input start,
     output reg done,
 
@@ -18,7 +18,7 @@ module load_store_unit (
     input load_complete,
     output reg store_req,
     output reg [`FE_ADDR_W-1:0] store_addr,
-    output reg [`FE_DATA_W-1:0] store_data,
+    output [`FE_DATA_W-1:0] store_data,
     input store_complete,
 
     // Accelerator interface
@@ -37,7 +37,7 @@ module load_store_unit (
     wire [`FE_DATA_W-1:0] load_fifo_data_out;
 
     reg store_fifo_write_en;
-    reg [`FE_DATA_W-1:0] store_fifo_data_in;
+    wire [`FE_DATA_W-1:0] store_fifo_data_in;
     wire store_fifo_full;
     wire store_fifo_empty;
     reg store_fifo_read_en;
@@ -46,7 +46,7 @@ module load_store_unit (
     // Instantiate load and store FIFOs
     fifo load_fifo (
         .clk(clk),
-        .rst_n(~reset),
+        .rst_n(~arst_i),
         .w_en(load_fifo_write_en),
         .data_in(load_fifo_data_in),
         .r_en(load_fifo_read_en),
@@ -57,7 +57,7 @@ module load_store_unit (
 
     fifo store_fifo (
         .clk(clk),
-        .rst_n(~reset),
+        .rst_n(~arst_i),
         .w_en(store_fifo_write_en),
         .data_in(store_fifo_data_in),
         .r_en(store_fifo_read_en),
@@ -83,8 +83,8 @@ module load_store_unit (
     reg [`FE_ADDR_W-1:0] current_load_addr, current_store_addr;
 
     // Loader state machine
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or posedge arst_i) begin
+        if (arst_i) begin
             loader_state <= LOADER_IDLE;
             load_req <= 0;
             load_counter <= 0;
@@ -132,8 +132,8 @@ module load_store_unit (
     end
 
     // Storer state machine
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or posedge arst_i) begin
+        if (arst_i) begin
             storer_state <= STORER_IDLE;
             store_req <= 0;
             store_counter <= 0;
@@ -188,12 +188,12 @@ module load_store_unit (
     end
 
     // Define state parameters
-    localparam IDLE = 2'b00;
-    localparam START_DELAY = 2'b01;
-    localparam RUNNING = 2'b10;
+    localparam IDLE = 3'b000;
+    localparam START_DELAY = 3'b001;
+    localparam RUNNING = 3'b010;
 
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or posedge arst_i) begin
+        if (arst_i) begin
             acc_state <= IDLE;
             accelerator_start <= 0;
             load_fifo_read_en <= 0;

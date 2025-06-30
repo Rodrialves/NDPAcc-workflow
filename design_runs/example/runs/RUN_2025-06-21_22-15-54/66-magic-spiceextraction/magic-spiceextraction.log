@@ -1,0 +1,388 @@
+
+Magic 8.3 revision 489 - Compiled on Thu Aug 22 13:45:15 UTC 2024.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Loading "/nix/store/ss2cw3sxbrwwx9jl0rrppbw4kgcmgi2n-python3-3.11.9-env/lib/python3.11/site-packages/openlane/scripts/magic/wrapper.tcl" from command line.
+> lef read /home/rodrialves/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef
+Reading LEF data from file /home/rodrialves/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef.
+This action cannot be undone.
+LEF read, Line 82 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 83 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 116 (Message): Unknown keyword "MINENCLOSEDAREA" in LEF file; ignoring.
+LEF read, Line 118 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 119 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 125 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 126 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 127 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 160 (Message): Unknown keyword "MINENCLOSEDAREA" in LEF file; ignoring.
+LEF read, Line 168 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 169 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 171 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 172 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 173 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 210 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 211 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 213 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 214 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 215 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 252 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 253 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 255 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 256 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 257 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 294 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 295 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read: Processed 801 lines.
+> lef read /home/rodrialves/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef
+Reading LEF data from file /home/rodrialves/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef.
+This action cannot be undone.
+LEF read: Processed 278 lines.
+> lef read /home/rodrialves/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef
+Reading LEF data from file /home/rodrialves/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef.
+This action cannot be undone.
+LEF read: Processed 56536 lines.
+> def read /home/rodrialves/MSc/design_runs/lsu_acc/runs/RUN_2025-06-21_22-15-54/52-odb-cellfrequencytables/lsu_wrapper.def -noblockage -labels
+Reading DEF data from file /home/rodrialves/MSc/design_runs/lsu_acc/runs/RUN_2025-06-21_22-15-54/52-odb-cellfrequencytables/lsu_wrapper.def.
+This action cannot be undone.
+  Processed 4 vias total.
+  Processed 10006 subcell instances total.
+  Processed 184 pins total.
+  Processed 2 special nets total.
+  Processed 4481 nets total.
+DEF read: Processed 74358 lines.
+Moving label "_0071_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_0180_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0181_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0232_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0239_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0241_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0247_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0251_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0252_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0255_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_0268_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0272_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0277_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0280_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0293_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0295_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0299_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0301_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0304_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0308_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0323_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0328_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0338_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0344_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0353_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_0356_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0366_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0386_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0403_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0405_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0418_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0426_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0435_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0446_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0478_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0483_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0484_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0490_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0499_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0500_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0506_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0524_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0530_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0535_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0550_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0566_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0576_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0586_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0592_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0597_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0611_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0625_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0626_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0631_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0639_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0644_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0647_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0650_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0651_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_0661_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0663_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0695_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0701_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0719_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0767_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0776_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0779_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0785_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0840_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0852_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0868_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0878_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0928_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0929_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0930_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0946_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0948_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0982_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_0983_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1035_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1054_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1056_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1060_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1062_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1065_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_1070_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1075_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1088_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1095_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1111_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1128_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1146_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1177_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1183_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1188_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_1204_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_1206_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1294_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1325_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1365_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1502_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1515_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_1538_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1540_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_1548_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1553_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1578_" from metal2 to via1 in cell lsu_wrapper.
+Moving label "_1585_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1600_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_1619_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1620_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1657_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1664_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1667_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1730_" from metal2 to via1 in cell lsu_wrapper.
+Moving label "_1764_" from metal1 to viali in cell lsu_wrapper.
+Moving label "_1802_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1881_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "_1884_" from metal1 to via1 in cell lsu_wrapper.
+Moving label "_1953_" from metal2 to via1 in cell lsu_wrapper.
+Moving label "_2037_" from metal3 to via3 in cell lsu_wrapper.
+Moving label "_2047_" from metal2 to via2 in cell lsu_wrapper.
+Moving label "acc.data_out\[4\]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "clknet_3_3__leaf_clk" from metal2 to via2 in cell lsu_wrapper.
+Moving label "lsu.current_store_addr\[13\]" from metal1 to viali in cell lsu_wrapper.
+Moving label "lsu.current_store_addr\[4\]" from metal2 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_counter\[10\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_counter\[11\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_counter\[8\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[10\]\[0\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[10\]\[13\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[10\]\[17\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[10\]\[31\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[12\]\[10\]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[12\]\[22\]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[14\]\[13\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[14\]\[19\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[14\]\[22\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[14\]\[23\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[14\]\[26\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[14\]\[27\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[14\]\[6\]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[15\]\[22\]" from metal2 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[15\]\[30\]" from metal2 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[2\]\[15\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[2\]\[23\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[2\]\[2\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[3\]\[26\]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[3\]\[27\]" from metal2 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[3\]\[6\]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[6\]\[11\]" from metal2 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[6\]\[14\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[6\]\[23\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[6\]\[29\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[7\]\[16\]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[7\]\[6\]" from metal2 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.queue\[8\]\[5\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.w_ptr\[0\]" from metal2 to via1 in cell lsu_wrapper.
+Moving label "lsu.load_fifo.w_ptr\[3\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[10\]\[1\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[10\]\[2\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[10\]\[4\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[10\]\[5\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[10\]\[8\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[10\]\[9\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[13\]\[1\]" from metal2 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[14\]\[1\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[14\]\[3\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[14\]\[9\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[1\]\[2\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[2\]\[5\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[2\]\[7\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[2\]\[8\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[3\]\[4\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[6\]\[0\]" from metal1 to via1 in cell lsu_wrapper.
+Moving label "lsu.store_fifo.queue\[8\]\[4\]" from metal2 to via1 in cell lsu_wrapper.
+Moving label "net1197" from metal1 to via1 in cell lsu_wrapper.
+Moving label "net1309" from metal1 to via1 in cell lsu_wrapper.
+Moving label "net163" from metal2 to via2 in cell lsu_wrapper.
+Moving label "net165" from metal2 to via2 in cell lsu_wrapper.
+Moving label "net21" from metal1 to via1 in cell lsu_wrapper.
+Moving label "net224" from metal2 to via2 in cell lsu_wrapper.
+Moving label "net228" from metal2 to via2 in cell lsu_wrapper.
+Moving label "net277" from metal2 to via2 in cell lsu_wrapper.
+Moving label "net369" from metal2 to via1 in cell lsu_wrapper.
+Moving label "net406" from metal2 to via2 in cell lsu_wrapper.
+Moving label "net447" from metal2 to via2 in cell lsu_wrapper.
+Moving label "net478" from metal1 to viali in cell lsu_wrapper.
+Moving label "net480" from metal2 to via2 in cell lsu_wrapper.
+Moving label "net586" from metal1 to via1 in cell lsu_wrapper.
+Moving label "net773" from metal1 to via1 in cell lsu_wrapper.
+Moving label "net79" from metal2 to via2 in cell lsu_wrapper.
+Moving label "net923" from metal1 to via1 in cell lsu_wrapper.
+Moving label "net925" from metal1 to via1 in cell lsu_wrapper.
+Moving label "store_addr[14]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "store_addr[2]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "store_addr[6]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "store_addr[8]" from metal2 to via2 in cell lsu_wrapper.
+Moving label "store_base_addr[17]" from metal1 to viali in cell lsu_wrapper.
+Moving label "store_data[4]" from metal2 to via2 in cell lsu_wrapper.
+Processing lsu_wrapper
+Extracting sky130_ef_sc_hd__decap_12 into sky130_ef_sc_hd__decap_12.ext:
+Extracting sky130_fd_sc_hd__decap_3 into sky130_fd_sc_hd__decap_3.ext:
+Extracting sky130_fd_sc_hd__fill_1 into sky130_fd_sc_hd__fill_1.ext:
+Extracting sky130_fd_sc_hd__tapvpwrvgnd_1 into sky130_fd_sc_hd__tapvpwrvgnd_1.ext:
+Extracting sky130_fd_sc_hd__decap_4 into sky130_fd_sc_hd__decap_4.ext:
+Extracting sky130_fd_sc_hd__decap_8 into sky130_fd_sc_hd__decap_8.ext:
+Extracting sky130_fd_sc_hd__mux2_1 into sky130_fd_sc_hd__mux2_1.ext:
+Extracting sky130_fd_sc_hd__clkbuf_1 into sky130_fd_sc_hd__clkbuf_1.ext:
+Extracting sky130_fd_sc_hd__fill_2 into sky130_fd_sc_hd__fill_2.ext:
+Extracting sky130_fd_sc_hd__decap_6 into sky130_fd_sc_hd__decap_6.ext:
+Extracting sky130_fd_sc_hd__clkbuf_2 into sky130_fd_sc_hd__clkbuf_2.ext:
+Extracting sky130_fd_sc_hd__dlygate4sd3_1 into sky130_fd_sc_hd__dlygate4sd3_1.ext:
+Extracting sky130_fd_sc_hd__dfxtp_1 into sky130_fd_sc_hd__dfxtp_1.ext:
+Extracting sky130_fd_sc_hd__conb_1 into sky130_fd_sc_hd__conb_1.ext:
+Extracting sky130_fd_sc_hd__buf_4 into sky130_fd_sc_hd__buf_4.ext:
+Extracting sky130_fd_sc_hd__mux4_1 into sky130_fd_sc_hd__mux4_1.ext:
+Extracting sky130_fd_sc_hd__dlymetal6s2s_1 into sky130_fd_sc_hd__dlymetal6s2s_1.ext:
+Extracting sky130_fd_sc_hd__clkbuf_8 into sky130_fd_sc_hd__clkbuf_8.ext:
+Extracting sky130_fd_sc_hd__inv_6 into sky130_fd_sc_hd__inv_6.ext:
+Extracting sky130_fd_sc_hd__clkinv_4 into sky130_fd_sc_hd__clkinv_4.ext:
+Extracting sky130_fd_sc_hd__clkinvlp_4 into sky130_fd_sc_hd__clkinvlp_4.ext:
+Extracting sky130_fd_sc_hd__buf_1 into sky130_fd_sc_hd__buf_1.ext:
+Extracting sky130_fd_sc_hd__buf_2 into sky130_fd_sc_hd__buf_2.ext:
+Extracting sky130_fd_sc_hd__clkbuf_4 into sky130_fd_sc_hd__clkbuf_4.ext:
+Extracting sky130_fd_sc_hd__bufinv_16 into sky130_fd_sc_hd__bufinv_16.ext:
+Extracting sky130_fd_sc_hd__inv_8 into sky130_fd_sc_hd__inv_8.ext:
+Extracting sky130_fd_sc_hd__clkinv_8 into sky130_fd_sc_hd__clkinv_8.ext:
+Extracting sky130_fd_sc_hd__inv_2 into sky130_fd_sc_hd__inv_2.ext:
+Extracting sky130_fd_sc_hd__nor2_1 into sky130_fd_sc_hd__nor2_1.ext:
+Extracting sky130_fd_sc_hd__dfrtp_1 into sky130_fd_sc_hd__dfrtp_1.ext:
+Extracting sky130_fd_sc_hd__diode_2 into sky130_fd_sc_hd__diode_2.ext:
+Extracting sky130_fd_sc_hd__nand2_1 into sky130_fd_sc_hd__nand2_1.ext:
+Extracting sky130_fd_sc_hd__clkbuf_16 into sky130_fd_sc_hd__clkbuf_16.ext:
+Extracting sky130_fd_sc_hd__o21a_1 into sky130_fd_sc_hd__o21a_1.ext:
+Extracting sky130_fd_sc_hd__o21ai_1 into sky130_fd_sc_hd__o21ai_1.ext:
+Extracting sky130_fd_sc_hd__o32a_1 into sky130_fd_sc_hd__o32a_1.ext:
+Extracting sky130_fd_sc_hd__xor2_1 into sky130_fd_sc_hd__xor2_1.ext:
+Extracting sky130_fd_sc_hd__clkinv_2 into sky130_fd_sc_hd__clkinv_2.ext:
+Extracting sky130_fd_sc_hd__and2b_1 into sky130_fd_sc_hd__and2b_1.ext:
+Extracting sky130_fd_sc_hd__o22a_1 into sky130_fd_sc_hd__o22a_1.ext:
+Extracting sky130_fd_sc_hd__or2_1 into sky130_fd_sc_hd__or2_1.ext:
+Extracting sky130_fd_sc_hd__a21bo_1 into sky130_fd_sc_hd__a21bo_1.ext:
+Extracting sky130_fd_sc_hd__inv_12 into sky130_fd_sc_hd__inv_12.ext:
+Extracting sky130_fd_sc_hd__a21boi_1 into sky130_fd_sc_hd__a21boi_1.ext:
+Extracting sky130_fd_sc_hd__o21ai_2 into sky130_fd_sc_hd__o21ai_2.ext:
+Extracting sky130_fd_sc_hd__xnor2_1 into sky130_fd_sc_hd__xnor2_1.ext:
+Extracting sky130_fd_sc_hd__inv_16 into sky130_fd_sc_hd__inv_16.ext:
+Extracting sky130_fd_sc_hd__xor2_2 into sky130_fd_sc_hd__xor2_2.ext:
+Extracting sky130_fd_sc_hd__a21oi_1 into sky130_fd_sc_hd__a21oi_1.ext:
+Extracting sky130_fd_sc_hd__and2_1 into sky130_fd_sc_hd__and2_1.ext:
+Extracting sky130_fd_sc_hd__a21boi_2 into sky130_fd_sc_hd__a21boi_2.ext:
+Extracting sky130_fd_sc_hd__nand2b_1 into sky130_fd_sc_hd__nand2b_1.ext:
+Extracting sky130_fd_sc_hd__o2bb2a_1 into sky130_fd_sc_hd__o2bb2a_1.ext:
+Extracting sky130_fd_sc_hd__a21o_1 into sky130_fd_sc_hd__a21o_1.ext:
+Extracting sky130_fd_sc_hd__xnor2_2 into sky130_fd_sc_hd__xnor2_2.ext:
+Extracting sky130_fd_sc_hd__and3_1 into sky130_fd_sc_hd__and3_1.ext:
+Extracting sky130_fd_sc_hd__a22o_1 into sky130_fd_sc_hd__a22o_1.ext:
+Extracting sky130_fd_sc_hd__dfrtp_2 into sky130_fd_sc_hd__dfrtp_2.ext:
+Extracting sky130_fd_sc_hd__a31o_1 into sky130_fd_sc_hd__a31o_1.ext:
+Extracting sky130_fd_sc_hd__a2bb2o_1 into sky130_fd_sc_hd__a2bb2o_1.ext:
+Extracting sky130_fd_sc_hd__or3_1 into sky130_fd_sc_hd__or3_1.ext:
+Extracting sky130_fd_sc_hd__and3b_1 into sky130_fd_sc_hd__and3b_1.ext:
+Extracting sky130_fd_sc_hd__and4_1 into sky130_fd_sc_hd__and4_1.ext:
+Extracting sky130_fd_sc_hd__o211a_1 into sky130_fd_sc_hd__o211a_1.ext:
+Extracting sky130_fd_sc_hd__or2_4 into sky130_fd_sc_hd__or2_4.ext:
+Extracting sky130_fd_sc_hd__nor2_4 into sky130_fd_sc_hd__nor2_4.ext:
+Extracting sky130_fd_sc_hd__or3_4 into sky130_fd_sc_hd__or3_4.ext:
+Extracting sky130_fd_sc_hd__o21ba_1 into sky130_fd_sc_hd__o21ba_1.ext:
+Extracting sky130_fd_sc_hd__a32o_1 into sky130_fd_sc_hd__a32o_1.ext:
+Extracting sky130_fd_sc_hd__nand3_1 into sky130_fd_sc_hd__nand3_1.ext:
+Extracting sky130_fd_sc_hd__or2_2 into sky130_fd_sc_hd__or2_2.ext:
+Extracting sky130_fd_sc_hd__nand2_2 into sky130_fd_sc_hd__nand2_2.ext:
+Extracting sky130_fd_sc_hd__or3b_4 into sky130_fd_sc_hd__or3b_4.ext:
+Extracting sky130_fd_sc_hd__nand3b_4 into sky130_fd_sc_hd__nand3b_4.ext:
+Extracting sky130_fd_sc_hd__nand3_2 into sky130_fd_sc_hd__nand3_2.ext:
+Extracting sky130_fd_sc_hd__a2111o_1 into sky130_fd_sc_hd__a2111o_1.ext:
+Extracting sky130_fd_sc_hd__dfrtp_4 into sky130_fd_sc_hd__dfrtp_4.ext:
+Extracting sky130_fd_sc_hd__o31a_2 into sky130_fd_sc_hd__o31a_2.ext:
+Extracting sky130_fd_sc_hd__a22oi_1 into sky130_fd_sc_hd__a22oi_1.ext:
+Extracting sky130_fd_sc_hd__o2111a_1 into sky130_fd_sc_hd__o2111a_1.ext:
+Extracting sky130_fd_sc_hd__or4b_1 into sky130_fd_sc_hd__or4b_1.ext:
+Extracting sky130_fd_sc_hd__or3_2 into sky130_fd_sc_hd__or3_2.ext:
+Extracting sky130_fd_sc_hd__and2_2 into sky130_fd_sc_hd__and2_2.ext:
+Extracting sky130_fd_sc_hd__and3b_2 into sky130_fd_sc_hd__and3b_2.ext:
+Extracting sky130_fd_sc_hd__and3_2 into sky130_fd_sc_hd__and3_2.ext:
+Extracting sky130_fd_sc_hd__o2111ai_1 into sky130_fd_sc_hd__o2111ai_1.ext:
+Extracting sky130_fd_sc_hd__and3b_4 into sky130_fd_sc_hd__and3b_4.ext:
+Extracting sky130_fd_sc_hd__or4b_4 into sky130_fd_sc_hd__or4b_4.ext:
+Extracting sky130_fd_sc_hd__nand2_4 into sky130_fd_sc_hd__nand2_4.ext:
+Extracting sky130_fd_sc_hd__nor2_2 into sky130_fd_sc_hd__nor2_2.ext:
+Extracting sky130_fd_sc_hd__or3b_1 into sky130_fd_sc_hd__or3b_1.ext:
+Extracting sky130_fd_sc_hd__nand3_4 into sky130_fd_sc_hd__nand3_4.ext:
+Extracting sky130_fd_sc_hd__o22ai_1 into sky130_fd_sc_hd__o22ai_1.ext:
+Extracting sky130_fd_sc_hd__nor3_1 into sky130_fd_sc_hd__nor3_1.ext:
+Extracting sky130_fd_sc_hd__a221oi_1 into sky130_fd_sc_hd__a221oi_1.ext:
+Extracting sky130_fd_sc_hd__and4b_1 into sky130_fd_sc_hd__and4b_1.ext:
+Extracting sky130_fd_sc_hd__a221o_1 into sky130_fd_sc_hd__a221o_1.ext:
+Extracting sky130_fd_sc_hd__a211o_1 into sky130_fd_sc_hd__a211o_1.ext:
+Extracting sky130_fd_sc_hd__o211ai_1 into sky130_fd_sc_hd__o211ai_1.ext:
+Extracting sky130_fd_sc_hd__a211oi_1 into sky130_fd_sc_hd__a211oi_1.ext:
+Extracting sky130_fd_sc_hd__a31oi_1 into sky130_fd_sc_hd__a31oi_1.ext:
+Extracting sky130_fd_sc_hd__a2111oi_4 into sky130_fd_sc_hd__a2111oi_4.ext:
+Extracting sky130_fd_sc_hd__o221a_1 into sky130_fd_sc_hd__o221a_1.ext:
+Extracting sky130_fd_sc_hd__a2bb2o_4 into sky130_fd_sc_hd__a2bb2o_4.ext:
+Extracting sky130_fd_sc_hd__buf_6 into sky130_fd_sc_hd__buf_6.ext:
+Extracting sky130_fd_sc_hd__buf_8 into sky130_fd_sc_hd__buf_8.ext:
+Extracting sky130_fd_sc_hd__o2bb2a_4 into sky130_fd_sc_hd__o2bb2a_4.ext:
+Extracting sky130_fd_sc_hd__and2_4 into sky130_fd_sc_hd__and2_4.ext:
+Extracting sky130_fd_sc_hd__o31a_1 into sky130_fd_sc_hd__o31a_1.ext:
+Extracting sky130_fd_sc_hd__or4_1 into sky130_fd_sc_hd__or4_1.ext:
+Extracting sky130_fd_sc_hd__xor2_4 into sky130_fd_sc_hd__xor2_4.ext:
+Extracting sky130_fd_sc_hd__or4_4 into sky130_fd_sc_hd__or4_4.ext:
+Extracting sky130_fd_sc_hd__a41o_1 into sky130_fd_sc_hd__a41o_1.ext:
+Extracting sky130_fd_sc_hd__o21a_4 into sky130_fd_sc_hd__o21a_4.ext:
+Extracting sky130_fd_sc_hd__mux2_4 into sky130_fd_sc_hd__mux2_4.ext:
+Extracting sky130_fd_sc_hd__mux2_2 into sky130_fd_sc_hd__mux2_2.ext:
+Extracting sky130_fd_sc_hd__o211a_4 into sky130_fd_sc_hd__o211a_4.ext:
+Extracting sky130_fd_sc_hd__dlygate4sd1_1 into sky130_fd_sc_hd__dlygate4sd1_1.ext:
+Extracting sky130_fd_sc_hd__o22ai_2 into sky130_fd_sc_hd__o22ai_2.ext:
+Extracting sky130_fd_sc_hd__and4_2 into sky130_fd_sc_hd__and4_2.ext:
+Extracting sky130_fd_sc_hd__nor4_1 into sky130_fd_sc_hd__nor4_1.ext:
+Extracting sky130_fd_sc_hd__and4bb_2 into sky130_fd_sc_hd__and4bb_2.ext:
+Extracting sky130_fd_sc_hd__o31ai_1 into sky130_fd_sc_hd__o31ai_1.ext:
+Extracting lsu_wrapper into lsu_wrapper.ext:
+exttospice finished.
+Using technology "sky130A", version 1.0.493-0-g0fe599b

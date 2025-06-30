@@ -6,7 +6,7 @@ module accelerator_count_tb;
     parameter CLK_PERIOD = 10;
     parameter NUM_WIDTH = 8;
 
-    reg clk_i;
+    reg clk;
     reg arst_i;
     reg start;
     reg [31:0] data_in;
@@ -22,7 +22,7 @@ module accelerator_count_tb;
 
     // DUT
     accelerator_property dut (
-        .clk_i(clk_i),
+        .clk(clk),
         .arst_i(arst_i),
         .start(start),
         .data_in(data_in),
@@ -32,8 +32,8 @@ module accelerator_count_tb;
 
     // Clock generation
     initial begin
-        clk_i = 0;
-        forever # (CLK_PERIOD / 2) clk_i = ~clk_i;
+        clk = 0;
+        forever # (CLK_PERIOD / 2) clk = ~clk;
     end
 
     // Waveform dumping
@@ -226,7 +226,7 @@ module accelerator_count_tb;
             start = 1;
             #(CLK_PERIOD);
             // Keep start high for extra cycles
-            repeat (3) @(posedge clk_i);
+            repeat (3) @(posedge clk);
             start = 0;
 
 

@@ -2,7 +2,7 @@
 
 module lsu_wrapper (
     input clk,
-    input reset,
+    input arst_i,
     input start,
     output done,
     input [`FE_ADDR_W-1:0] load_base_addr,
@@ -27,7 +27,7 @@ module lsu_wrapper (
     // Instantiate load_store_unit
     load_store_unit lsu (
         .clk(clk),
-        .reset(reset),
+        .arst_i(arst_i),
         .start(start),
         .done(done),
         .load_base_addr(load_base_addr),
@@ -49,8 +49,8 @@ module lsu_wrapper (
 
     // Instantiate accelerator
     accelerator acc (
-        .clk_i(clk),
-        .arst_i(reset),
+        .clk(clk),
+        .arst_i(arst_i),
         .start(accelerator_start),
         .data_in(accelerator_data_in),
         .data_out(accelerator_data_out),

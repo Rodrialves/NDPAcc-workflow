@@ -1,0 +1,10 @@
+%Warning-UNUSEDSIGNAL: /home/rodrialves/MSc/design_runs/lsu_acc/load_store_unit.v:41:10: Signal is not used: 'store_fifo_full'
+                                                                                       : ... note: In instance 'lsu_wrapper.lsu'
+   41 |     wire store_fifo_full;
+      |          ^~~~~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.018
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /home/rodrialves/MSc/design_runs/lsu_acc/fifo.v:50:24: Signal is not used: 'r_ptr_next'
+                                                                            : ... note: In instance 'lsu_wrapper.lsu.store_fifo'
+   50 |   wire [PTR_WIDTH-1:0] r_ptr_next = r_ptr + 1;
+      |                        ^~~~~~~~~~

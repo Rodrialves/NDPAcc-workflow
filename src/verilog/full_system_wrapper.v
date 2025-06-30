@@ -5,7 +5,7 @@
 module fs_wrapper (
     // Clock and reset
     input  wire              clk,
-    input  wire              reset,      // Active-high asynchronous reset for bus and memory. (Active-low for accelerator internally)
+    input  wire              arst_i,      // Active-high asynchronous reset for bus and memory. (Active-low for accelerator internally)
     // CPU-like interface (to be driven by testbench)
     input  wire              cpu_valid,
     input  wire [`FE_ADDR_W-1:0] cpu_addr,
@@ -18,7 +18,7 @@ module fs_wrapper (
     input  wire              start,
     input  wire [`FE_ADDR_W-1:0] input_addr,
     input  wire [`FE_ADDR_W-1:0] output_addr,
-    input  wire [31:0]       N,
+    input  wire [`FE_ADDR_W-1:0]       N,
     output wire              done,
     // Debug/status outputs
     output reg               error_flag
@@ -43,12 +43,27 @@ module fs_wrapper (
     wire              cache_rvalid;
     wire              cache_ready;
 
-    // Invert reset for accelerator (convert active-high reset to active-low)
-    wire arst_i = reset;       // async reset for bus controller and memory (active high)
-    wire rst_n  = ~reset;      // synchronous reset for accelerator (active low)
+    // LSU interface wires
+    wire              lsu_load_req;
+    wire [`FE_ADDR_W-1:0] lsu_load_addr;
+    wire [`FE_DATA_W-1:0] lsu_load_data;
+    wire              lsu_load_complete;
+    wire              lsu_store_req;
+    wire [`FE_ADDR_W-1:0] lsu_store_addr;
+    wire [`FE_DATA_W-1:0] lsu_store_data;
+    wire              lsu_store_complete;
+
+    // Map LSU signals to bus controller accelerator interface
+    assign acc_valid = lsu_load_req | lsu_store_req;
+    assign acc_addr = lsu_store_req ? lsu_store_addr : lsu_load_addr;
+    assign acc_wdata = lsu_store_data;
+    assign acc_wstrb = lsu_store_req ? 4'b1111 : 4'b0000;
+    assign lsu_load_data = acc_rdata;
+    assign lsu_load_complete = acc_rvalid;
+    assign lsu_store_complete = acc_ready & lsu_store_req;
 
     // Instantiate the Bus Controller (arbiter between CPU and Accelerator)
-    bus_controller u_bus_ctrl (
+    memory_controller mem_ctrl (
         // CPU side
         .cpu_valid   (cpu_valid),
         .cpu_addr    (cpu_addr),
@@ -74,7 +89,7 @@ module fs_wrapper (
         .cache_rvalid(cache_rvalid),
         .cache_ready (cache_ready),
         // Clock and reset
-        .clk_i       (clk),
+        .clk       (clk),
         .arst_i      (arst_i)
     );
 
@@ -98,30 +113,26 @@ module fs_wrapper (
         .arst_i      (arst_i)
     );
 
-    // Instantiate the Accelerator module
-    int_sum_v2 u_accel (
-        .clk         (clk),
-        .rst_n       (rst_n),
-        // Interface to bus_controller (memory requests)
-        .acc_valid   (acc_valid),
-        .acc_addr    (acc_addr),
-        .acc_wdata   (acc_wdata),
-        .acc_wstrb   (acc_wstrb),
-        .acc_rdata   (acc_rdata),
-        .acc_rvalid  (acc_rvalid),
-        .acc_ready   (acc_ready),
-        // Control signals
-        .start       (start),
-        .input_addr  (input_addr),
-        .output_addr (output_addr),
-        .N           (N),
-        .done        (done)
+    // Instantiate the LSU Wrapper (includes accelerator and LSU)
+    lsu_wrapper u_lsu_wrap (
+        .clk(clk),
+        .arst_i(arst_i),
+        .start(start),
+        .done(done),
+        .load_base_addr(input_addr),
+        .store_base_addr(output_addr),
+        .count(N),
+        .load_req(lsu_load_req),
+        .load_addr(lsu_load_addr),
+        .load_data(lsu_load_data),
+        .load_complete(lsu_load_complete),
+        .store_req(lsu_store_req),
+        .store_addr(lsu_store_addr),
+        .store_data(lsu_store_data),
+        .store_complete(lsu_store_complete)
     );
 
-    // =============================================================
     // Debugging/Monitoring Logic (Simulation-only constructs)
-    // =============================================================
-    // Monitor important signals continuously
     initial begin
         $monitor("[@%0t] CPU: valid=%b ready=%b rvalid=%b addr=%h wstrb=%h ACC: valid=%b ready=%b rvalid=%b addr=%h wstrb=%h ] done=%b",
                 $time, cpu_valid, cpu_ready, cpu_rvalid, cpu_addr, cpu_wstrb,
@@ -130,8 +141,8 @@ module fs_wrapper (
 
     // Track outstanding read requests for error detection
     integer outstanding_reads;
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or posedge arst_i) begin
+        if (arst_i) begin
             outstanding_reads <= 0;
             error_flag <= 0;
         end else begin
@@ -157,37 +168,5 @@ module fs_wrapper (
             end
         end
     end
-
-    // // Log memory transactions for clarity
-    // always @(posedge clk) begin
-    //     // Log CPU transactions
-    //     if (cpu_valid && cpu_ready) begin
-    //         if (cpu_wstrb !== {`FE_STRB_W{1'b0}}) begin  // write operation
-    //             $display("CPU WRITE: addr=%h data=%h (strobe %h) at time %0t",
-    //                      cpu_addr, cpu_wdata, cpu_wstrb, $time);
-    //         end else begin  // read operation
-    //             $display("CPU READ REQUEST: addr=%h at time %0t", cpu_addr, $time);
-    //         end
-    //     end
-    //     if (cpu_rvalid) begin
-    //         $display("CPU READ RESPONSE: data=%h at time %0t", cpu_rdata, $time);
-    //     end
-    //     // Log Accelerator transactions
-    //     if (acc_valid && acc_ready) begin
-    //         if (acc_wstrb !== {`FE_STRB_W{1'b0}}) begin  // write
-    //             $display("ACC WRITE: addr=%h data=%h (strobe %h) at time %0t",
-    //                      acc_addr, acc_wdata, acc_wstrb, $time);
-    //         end else begin  // read
-    //             $display("ACC READ REQUEST: addr=%h at time %0t", acc_addr, $time);
-    //         end
-    //     end
-    //     if (acc_rvalid) begin
-    //         $display("ACC READ RESPONSE: data=%h at time %0t", acc_rdata, $time);
-    //     end
-    //     // Log accelerator completion
-    //     if (done) begin
-    //         $display("ACCELERATOR DONE asserted at time %0t (computation complete)", $time);
-    //     end
-    // end
 
 endmodule

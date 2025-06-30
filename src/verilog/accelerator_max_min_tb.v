@@ -3,10 +3,10 @@
 
 module accelerator_max_min_tb;
 
-    parameter CLK_PERIOD = 10;
+    parameter CLK_PERIOD = 50;
     parameter NUM_WIDTH = 8;
 
-    reg clk_i;
+    reg clk;
     reg arst_i;
     reg start;
     reg [31:0] data_sets [0:2];
@@ -15,14 +15,14 @@ module accelerator_max_min_tb;
     reg [NUM_WIDTH-1:0] temp_max, temp_min;
     reg [NUM_WIDTH-1:0] new_exp_max, new_exp_min;
     reg [31:0] data_in_local;
-    integer num_sets;
+    integer num_sets, i;
     reg [31:0] data_in;
     wire [31:0] data_out;
     wire done;
 
     // DUT
     accelerator_max_min dut (
-        .clk_i(clk_i),
+        .clk(clk),
         .arst_i(arst_i),
         .start(start),
         .data_in(data_in),
@@ -32,8 +32,8 @@ module accelerator_max_min_tb;
 
     // Clock generation
     initial begin
-        clk_i = 0;
-        forever # (CLK_PERIOD / 2) clk_i = ~clk_i;
+        clk = 0;
+        forever # (CLK_PERIOD / 2) clk = ~clk;
     end
 
     // Waveform dumping
@@ -67,7 +67,7 @@ module accelerator_max_min_tb;
         data_in = 0;
         start = 0;
         arst_i = 1;
-        #20;
+        #100;
         arst_i = 0;
         #(CLK_PERIOD);
 
@@ -78,7 +78,7 @@ module accelerator_max_min_tb;
         data_sets[2] = 32'h090A0B0C;
         exp_max = 0;
         exp_min = {NUM_WIDTH{1'b1}};
-        for (integer i = 0; i < 3; i = i + 1) begin
+        for (i = 0; i < 3; i = i + 1) begin
             data_in_local = data_sets[i];
             n0 = data_in_local[7:0];
             n1 = data_in_local[15:8];
@@ -218,7 +218,7 @@ module accelerator_max_min_tb;
         exp_max = 0;
         exp_min = {NUM_WIDTH{1'b1}};
         num_sets = 1000;
-        for (integer i = 0; i < num_sets; i = i + 1) begin
+        for (i = 0; i < num_sets; i = i + 1) begin
             data_in_local = $random;
             n0 = data_in_local[7:0];
             n1 = data_in_local[15:8];

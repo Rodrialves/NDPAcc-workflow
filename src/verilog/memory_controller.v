@@ -1,6 +1,6 @@
 `include "constants.vh" 
 
-module bus_controller (
+module memory_controller (
     // CPU interface
     input  wire                cpu_valid,
     input  wire [`FE_ADDR_W-1 :0] cpu_addr,
@@ -29,12 +29,12 @@ module bus_controller (
     input  wire                cache_ready,
 
     // Clock and reset
-    input  wire        clk_i,
+    input  wire        clk,
     input  wire        arst_i
 );
 
     // Round-robin arbitration
-    reg last_served; // 0: CPU, 1: accelerator
+    reg [1:0] last_served; // 0: CPU, 1: accelerator
     reg [1:0] select; // Changed from wire to reg
     always @* begin
         if (last_served == 0) begin // Last served was CPU, prefer accelerator
@@ -50,16 +50,16 @@ module bus_controller (
 
     // Drive cache inputs based on selected requester
     assign cache_valid = (select == 0) ? cpu_valid : (select == 1) ? acc_valid : 1'b0;
-    assign cache_addr  = (select == 0) ? cpu_addr  : (select == 1) ? acc_addr  : `FE_ADDR_W-1'b0;
-    assign cache_wdata = (select == 0) ? cpu_wdata : (select == 1) ? acc_wdata : `FE_DATA_W-1'b0;
-    assign cache_wstrb = (select == 0) ? cpu_wstrb : (select == 1) ? acc_wstrb : `FE_STRB_W-1'b0;
+    assign cache_addr  = (select == 0) ? cpu_addr  : (select == 1) ? acc_addr  : {`FE_ADDR_W{1'b0}};
+    assign cache_wdata = (select == 0) ? cpu_wdata : (select == 1) ? acc_wdata : {`FE_DATA_W{1'b0}};
+    assign cache_wstrb = (select == 0) ? cpu_wstrb : (select == 1) ? acc_wstrb : {`FE_STRB_W{1'b0}};
 
     // Ready signals back to requesters
     assign cpu_ready = (select == 0) && cache_ready;
     assign acc_ready = (select == 1) && cache_ready;
 
     // Update last_served when a request is accepted
-    always @(posedge clk_i or posedge arst_i) begin
+    always @(posedge clk or posedge arst_i) begin
         if (arst_i) begin
             last_served <= 0; // Reset to prefer CPU initially
         end else if (cache_valid && cache_ready) begin
@@ -73,12 +73,12 @@ module bus_controller (
     reg [2:0] read_count;           // Number of entries (0 to 4)
 
     // Push requester ID into FIFO for read requests
-    always @(posedge clk_i or posedge arst_i) begin
+    always @(posedge clk or posedge arst_i) begin
         if (arst_i) begin
             read_head  <= 2'd0;
             read_tail  <= 2'd0;
             read_count <= 3'd0;
-        end else if (cache_valid && cache_ready && (cache_wstrb == 32'b0)) begin
+        end else if (cache_valid && cache_ready && (cache_wstrb == {`FE_STRB_W{1'b0}})) begin
             // Read request accepted
             read_requester[read_tail] <= select;
             read_tail <= read_tail + 1; // Wraps naturally modulo 4
@@ -87,13 +87,19 @@ module bus_controller (
     end
 
     // Pop FIFO and route read responses
-    always @(posedge clk_i or posedge arst_i) begin
+    always @(posedge clk or posedge arst_i) begin
         if (arst_i) begin
+            // Reset state
+            read_head  <= 2'd0;
+            read_count <= 3'd0;
             cpu_rvalid <= 1'b0;
             acc_rvalid <= 1'b0;
         end else begin
+            // Default outputs
             cpu_rvalid <= 1'b0;
             acc_rvalid <= 1'b0;
+
+            // Pop operation: Process read response
             if (cache_rvalid && read_count > 0) begin
                 case (read_requester[read_head])
                     2'd0: begin
@@ -105,10 +111,20 @@ module bus_controller (
                         acc_rvalid <= 1'b1;
                     end
                 endcase
-                read_head <= read_head + 1; // Wraps naturally modulo 4
-                read_count <= read_count - 1;
+                read_head <= (read_head + 1) % 4; // 2-bit pointer wraps at 4
+                if (!(cache_valid && cache_ready && (cache_wstrb == 0))) begin
+                    read_count <= read_count - 1; // Decrement unless pushing too
+                end
+            end
+
+            // Push operation: Accept read request
+            if (cache_valid && cache_ready && (cache_wstrb == 0)) begin
+                read_requester[read_tail] <= select; // Store requesting master ID
+                read_tail <= (read_tail + 1) % 4;   // 2-bit pointer wraps at 4
+                if (!(cache_rvalid && read_count > 0)) begin
+                    read_count <= read_count + 1; // Increment unless popping too
+                end
             end
         end
     end
-
 endmodule

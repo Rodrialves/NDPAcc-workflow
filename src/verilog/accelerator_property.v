@@ -2,7 +2,7 @@
 
 // Accelerator for Map/Reduce Operation (Counting Even Numbers)
 module accelerator_property (
-    input wire clk_i,
+    input wire clk,
     input wire arst_i,
     input wire start,
     input wire [`FE_DATA_W-1:0] data_in,
@@ -30,9 +30,9 @@ module accelerator_property (
     wire is_even2 = ~num2[0];
     wire is_even3 = ~num3[0];
 
-    wire [2:0] even_count = is_even0 + is_even1 + is_even2 + is_even3;
+    wire [2:0] even_count = {2'b0,is_even0} + {2'b0,is_even1} + {2'b0,is_even2} + {2'b0,is_even3};
 
-    always @(posedge clk_i or posedge arst_i) begin
+    always @(posedge clk or posedge arst_i) begin
         if (arst_i) begin
             count <= 32'h0;
             state <= IDLE;
@@ -42,8 +42,8 @@ module accelerator_property (
             case (state)
                 IDLE: begin
                     if (start) begin
-                        count <= count + even_count;
-                        data_out <= count + even_count;
+                        count <= count + {29'b0,even_count};
+                        data_out <= count + {29'b0,even_count};
                         state <= DONE;
                         done <= 1'b1;
                     end
@@ -53,6 +53,10 @@ module accelerator_property (
                         state <= IDLE;
                         done <= 1'b0;
                     end
+                end
+                default: begin
+                    state <= IDLE;
+                    done <= 1'b0;
                 end
             endcase
         end

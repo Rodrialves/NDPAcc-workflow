@@ -2,7 +2,7 @@
 
 // Accelerator for Maximum and Minimum Calculation
 module accelerator_max_min (
-    input wire clk_i,
+    input wire clk,
     input wire arst_i,
     input wire start,
     input wire [`FE_DATA_W-1:0] data_in,
@@ -38,7 +38,7 @@ module accelerator_max_min (
     wire [NUM_WIDTH-1:0] new_max = (max_of_four > current_max) ? max_of_four : current_max;
     wire [NUM_WIDTH-1:0] new_min = (min_of_four < current_min) ? min_of_four : current_min;
 
-    always @(posedge clk_i or posedge arst_i) begin
+    always @(posedge clk or posedge arst_i) begin
         if (arst_i) begin
             current_max <= {NUM_WIDTH{1'b0}}; // Initialize to 0
             current_min <= {NUM_WIDTH{1'b1}}; // Initialize to 255
@@ -61,6 +61,10 @@ module accelerator_max_min (
                         state <= IDLE;
                         done <= 1'b0;
                     end
+                end
+                default: begin
+                    state <= IDLE;
+                    done <= 0;
                 end
             endcase
         end

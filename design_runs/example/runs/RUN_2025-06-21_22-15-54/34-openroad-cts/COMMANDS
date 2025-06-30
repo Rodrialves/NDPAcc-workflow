@@ -1,0 +1,1 @@
+openroad -exit -no_splash -metrics /home/rodrialves/MSc/design_runs/lsu_acc/runs/RUN_2025-06-21_22-15-54/34-openroad-cts/or_metrics_out.json /nix/store/ss2cw3sxbrwwx9jl0rrppbw4kgcmgi2n-python3-3.11.9-env/lib/python3.11/site-packages/openlane/scripts/openroad/cts.tcl
